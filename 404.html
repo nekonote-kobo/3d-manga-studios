@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><title>ページが見つかりません / Page not found</title>
+<meta name="robots" content="noindex">
+<script>
+(function(){
+  var base="/3d-manga-studios";
+  var p=location.pathname, rest=p.indexOf(base)===0?p.slice(base.length):p;
+  var seg=rest.replace(/^\//,"").split("/")[0];
+  var versioned=["1.0","1.2","latest"];
+  if(versioned.indexOf(seg)>=0) return;
+  var old=["3D_Collection.html", "apply_material_&_outline.html", "camera.html", "development.html", "en", "guide.html", "help.html", "index.html", "install.html", "license.html", "light_collection.html", "mangaToneShader.html", "mangaToneShader_property.html", "optionMaterial.html", "release.html", "requirements.html", "translation.html", "3d_collection.html", "apply_material_&_outline.html", "camera.html", "development.html", "en", "guide.html", "help.html", "index.html", "install.html", "license.html", "light_collection.html", "mangatoneshader.html", "mangatoneshader_property.html", "optionmaterial.html", "release.html", "requirements.html", "translation.html"];
+  var target=(old.indexOf(seg.toLowerCase())>=0||old.indexOf(seg)>=0)?"/1.0":"/latest";
+  location.replace(base+target+(rest||"/")+location.search+location.hash);
+})();
+</script></head>
+<body><p>ページが見つかりません。<a href="/3d-manga-studios/">トップへ</a></p>
+<p>Page not found. <a href="/3d-manga-studios/">Go to the top page</a></p></body></html>
