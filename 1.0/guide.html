@@ -1438,4 +1438,21 @@
   
 <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(()=>{ lightbox.reload(); });
-</script></body></html>
+</script><style>
+/* Version selector: open on click, not hover (20261112) */
+html .md-version:hover .md-version__list,html .md-version:focus-within .md-version__list{max-height:0;opacity:0;animation:none;transition:max-height 0ms .25s,opacity .2s}
+html .md-version.ms-open .md-version__list{max-height:10rem;opacity:1;transition:max-height 0ms,opacity .2s}
+</style><script>
+/* Version selector: open on click, not hover (20261112) */
+(function(){
+  if (window.__msVersionClick) return; window.__msVersionClick = true;
+  function closeAll(except){document.querySelectorAll('.md-version.ms-open').forEach(function(v){if(v!==except)v.classList.remove('ms-open')})}
+  document.addEventListener('click',function(e){
+    var cur=e.target.closest&&e.target.closest('.md-version__current');
+    if(cur){var v=cur.closest('.md-version');e.preventDefault();closeAll(v);v.classList.toggle('ms-open');if(!v.classList.contains('ms-open'))cur.blur();return}
+    if(!(e.target.closest&&e.target.closest('.md-version__list')))closeAll();
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll()});
+})();
+</script>
+</body></html>
