@@ -774,3 +774,7 @@ html[lang="en"] .ms-pop{-webkit-text-stroke:4px #141519;
 @media (max-width:760px){.ms-stats>div.ms-stat-mini{grid-column:auto}}
 /* prop card inside a bubble admonition (20261109a) */
 .md-typeset .admonition .ms-prop,.md-typeset details .ms-prop{margin:.8rem 0 .2rem}
+
+/* Version selector: open on click, not hover (20261112) */
+html .md-version:hover .md-version__list,html .md-version:focus-within .md-version__list{max-height:0;opacity:0;animation:none;transition:max-height 0ms .25s,opacity .2s}
+html .md-version.ms-open .md-version__list{max-height:10rem;opacity:1;transition:max-height 0ms,opacity .2s}
