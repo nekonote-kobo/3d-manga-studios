@@ -414,3 +414,15 @@ if(window.document$){document$.subscribe(()=>setTimeout(msInit,0))}
   }
   if(window.document$&&document$.subscribe){document$.subscribe(popInit)}else if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',popInit)}else{popInit()}
 })();
+
+/* Version selector: open on click, not hover (20261112) */
+(function(){
+  if (window.__msVersionClick) return; window.__msVersionClick = true;
+  function closeAll(except){document.querySelectorAll('.md-version.ms-open').forEach(function(v){if(v!==except)v.classList.remove('ms-open')})}
+  document.addEventListener('click',function(e){
+    var cur=e.target.closest&&e.target.closest('.md-version__current');
+    if(cur){var v=cur.closest('.md-version');e.preventDefault();closeAll(v);v.classList.toggle('ms-open');if(!v.classList.contains('ms-open'))cur.blur();return}
+    if(!(e.target.closest&&e.target.closest('.md-version__list')))closeAll();
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll()});
+})();
