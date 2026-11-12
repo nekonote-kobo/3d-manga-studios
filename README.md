@@ -6,7 +6,9 @@
 pip install -r requirements.txt   # mkdocs-material を入れる（MkDocs 2.0 は非対応のため 1.x に固定）
 mkdocs serve                      # http://127.0.0.1:8000 で確認（保存すると自動で更新）
 mkdocs build                      # site/ に静的サイトを書き出す
-mkdocs gh-deploy                  # GitHub Pages（https://nekonote-kobo.github.io/3d-manga-studios/）に公開
+# 公開（バージョン切り替え・mike）: https://nekonote-kobo.github.io/3d-manga-studios/
+mike deploy -F mkdocs_版切り替え対応.yml -t "1.2.0 beta" -u --push 1.2 latest
+# 旧版 1.0.1 は gh-pages の /1.0/ に保存済み（ソースは v1.0 ブランチ）。gh-deploy は使わない（版が消えるため）
 ```
 
 ## フォルダ構成
