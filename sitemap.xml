@@ -1,227 +1,353 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
-        <loc>Noneindex.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/index.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ja" href="Noneindex.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/index.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/index.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/index.html"/>
     </url>
     <url>
-        <loc>None3D_Collection.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/changelog.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ja" href="None3D_Collection.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/3D_Collection.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/changelog.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/changelog.html"/>
     </url>
     <url>
-        <loc>Noneapply_material_%26_outline.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/faq.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ja" href="Noneapply_material_%26_outline.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/apply_material_%26_outline.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/faq.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/faq.html"/>
     </url>
     <url>
-        <loc>Nonecamera.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/highlights.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ja" href="Nonecamera.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/camera.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/highlights.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/highlights.html"/>
     </url>
     <url>
-        <loc>Nonedevelopment.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/license.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ja" href="Nonedevelopment.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/development.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/license.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/license.html"/>
     </url>
     <url>
-        <loc>Noneguide.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/translation.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ja" href="Noneguide.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/guide.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/translation.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/translation.html"/>
     </url>
     <url>
-        <loc>Nonehelp.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/getting-started/index.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ja" href="Nonehelp.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/help.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/getting-started/index.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/getting-started/index.html"/>
     </url>
     <url>
-        <loc>Noneinstall.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/getting-started/install.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ja" href="Noneinstall.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/install.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/getting-started/install.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/getting-started/install.html"/>
     </url>
     <url>
-        <loc>Nonelicense.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/getting-started/license.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ja" href="Nonelicense.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/license.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/getting-started/license.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/getting-started/license.html"/>
     </url>
     <url>
-        <loc>Nonelight_collection.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/guide/index.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ja" href="Nonelight_collection.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/light_collection.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/guide/index.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/guide/index.html"/>
     </url>
     <url>
-        <loc>NonemangaToneShader.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/guide/bgfx.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ja" href="NonemangaToneShader.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/mangaToneShader.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/guide/bgfx.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/guide/bgfx.html"/>
     </url>
     <url>
-        <loc>NonemangaToneShader_property.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/guide/material.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ja" href="NonemangaToneShader_property.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/mangaToneShader_property.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/guide/material.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/guide/material.html"/>
     </url>
     <url>
-        <loc>NoneoptionMaterial.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/guide/outline.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ja" href="NoneoptionMaterial.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/optionMaterial.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/guide/outline.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/guide/outline.html"/>
     </url>
     <url>
-        <loc>Nonerelease.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/guide/scene.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ja" href="Nonerelease.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/release.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/guide/scene.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/guide/scene.html"/>
     </url>
     <url>
-        <loc>Nonerequirements.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/spec/index.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ja" href="Nonerequirements.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/requirements.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/spec/index.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/spec/index.html"/>
     </url>
     <url>
-        <loc>Nonetranslation.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/spec/flat.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ja" href="Nonetranslation.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/translation.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/spec/flat.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/spec/flat.html"/>
     </url>
     <url>
-        <loc>Noneen/index.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/spec/mtb.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/index.html"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="Noneindex.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/spec/mtb.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/spec/mtb.html"/>
     </url>
     <url>
-        <loc>Noneen/3D_Collection.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/spec/mte.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/3D_Collection.html"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="None3D_Collection.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/spec/mte.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/spec/mte.html"/>
     </url>
     <url>
-        <loc>Noneen/apply_material_%26_outline.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/spec/mtfx.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/apply_material_%26_outline.html"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="Noneapply_material_%26_outline.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/spec/mtfx.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/spec/mtfx.html"/>
     </url>
     <url>
-        <loc>Noneen/camera.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/spec/mtg.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/camera.html"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="Nonecamera.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/spec/mtg.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/spec/mtg.html"/>
     </url>
     <url>
-        <loc>Noneen/development.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/spec/mtm.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/development.html"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="Nonedevelopment.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/spec/mtm.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/spec/mtm.html"/>
     </url>
     <url>
-        <loc>Noneen/guide.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/spec/mts.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/guide.html"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="Noneguide.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/spec/mts.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/spec/mts.html"/>
     </url>
     <url>
-        <loc>Noneen/help.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/spec/mtsb.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/help.html"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="Nonehelp.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/spec/mtsb.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/spec/mtsb.html"/>
     </url>
     <url>
-        <loc>Noneen/install.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/spec/shaded.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/install.html"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="Noneinstall.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/spec/shaded.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/spec/shaded.html"/>
     </url>
     <url>
-        <loc>Noneen/license.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/spec/tones.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/license.html"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="Nonelicense.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/spec/tones.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/spec/tones.html"/>
     </url>
     <url>
-        <loc>Noneen/light_collection.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/en/index.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/light_collection.html"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="Nonelight_collection.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/index.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/index.html"/>
     </url>
     <url>
-        <loc>Noneen/mangaToneShader.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/en/changelog.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/mangaToneShader.html"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="NonemangaToneShader.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/changelog.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/changelog.html"/>
     </url>
     <url>
-        <loc>Noneen/mangaToneShader_property.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/en/faq.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/mangaToneShader_property.html"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="NonemangaToneShader_property.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/faq.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/faq.html"/>
     </url>
     <url>
-        <loc>Noneen/optionMaterial.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/en/highlights.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/optionMaterial.html"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="NoneoptionMaterial.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/highlights.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/highlights.html"/>
     </url>
     <url>
-        <loc>Noneen/release.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/en/license.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/release.html"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="Nonerelease.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/license.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/license.html"/>
     </url>
     <url>
-        <loc>Noneen/requirements.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/en/translation.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/requirements.html"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="Nonerequirements.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/translation.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/translation.html"/>
     </url>
     <url>
-        <loc>Noneen/translation.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/en/getting-started/index.html</loc>
+        <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneen/translation.html"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="Nonetranslation.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/getting-started/index.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/getting-started/index.html"/>
+    </url>
+    <url>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/en/getting-started/install.html</loc>
+        <lastmod>2026-11-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/getting-started/install.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/getting-started/install.html"/>
+    </url>
+    <url>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/en/getting-started/license.html</loc>
+        <lastmod>2026-11-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/getting-started/license.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/getting-started/license.html"/>
+    </url>
+    <url>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/en/guide/index.html</loc>
+        <lastmod>2026-11-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/guide/index.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/guide/index.html"/>
+    </url>
+    <url>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/en/guide/bgfx.html</loc>
+        <lastmod>2026-11-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/guide/bgfx.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/guide/bgfx.html"/>
+    </url>
+    <url>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/en/guide/material.html</loc>
+        <lastmod>2026-11-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/guide/material.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/guide/material.html"/>
+    </url>
+    <url>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/en/guide/outline.html</loc>
+        <lastmod>2026-11-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/guide/outline.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/guide/outline.html"/>
+    </url>
+    <url>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/en/guide/scene.html</loc>
+        <lastmod>2026-11-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/guide/scene.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/guide/scene.html"/>
+    </url>
+    <url>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/en/spec/index.html</loc>
+        <lastmod>2026-11-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/spec/index.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/spec/index.html"/>
+    </url>
+    <url>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/en/spec/flat.html</loc>
+        <lastmod>2026-11-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/spec/flat.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/spec/flat.html"/>
+    </url>
+    <url>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/en/spec/mtb.html</loc>
+        <lastmod>2026-11-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/spec/mtb.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/spec/mtb.html"/>
+    </url>
+    <url>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/en/spec/mte.html</loc>
+        <lastmod>2026-11-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/spec/mte.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/spec/mte.html"/>
+    </url>
+    <url>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/en/spec/mtfx.html</loc>
+        <lastmod>2026-11-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/spec/mtfx.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/spec/mtfx.html"/>
+    </url>
+    <url>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/en/spec/mtg.html</loc>
+        <lastmod>2026-11-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/spec/mtg.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/spec/mtg.html"/>
+    </url>
+    <url>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/en/spec/mtm.html</loc>
+        <lastmod>2026-11-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/spec/mtm.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/spec/mtm.html"/>
+    </url>
+    <url>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/en/spec/mts.html</loc>
+        <lastmod>2026-11-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/spec/mts.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/spec/mts.html"/>
+    </url>
+    <url>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/en/spec/mtsb.html</loc>
+        <lastmod>2026-11-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/spec/mtsb.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/spec/mtsb.html"/>
+    </url>
+    <url>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/en/spec/shaded.html</loc>
+        <lastmod>2026-11-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/spec/shaded.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/spec/shaded.html"/>
+    </url>
+    <url>
+        <loc>https://nekonote-kobo.github.io/3d-manga-studios/en/spec/tones.html</loc>
+        <lastmod>2026-11-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://nekonote-kobo.github.io/3d-manga-studios/en/spec/tones.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://nekonote-kobo.github.io/3d-manga-studios/spec/tones.html"/>
     </url>
 </urlset>

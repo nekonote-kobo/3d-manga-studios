@@ -1,0 +1,2182 @@
+<!DOCTYPE html><html lang="ja" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Blenderで漫画のコマを仕上げるアドオン「3D Manga Studios」のドキュメント">
+      
+      
+        <meta name="author" content="Adacchi-MultiCreator">
+      
+      
+        <link rel="canonical" href="https://nekonote-kobo.github.io/3d-manga-studios/guide/bgfx.html">
+      
+      
+        <link rel="prev" href="outline.html">
+      
+      
+        <link rel="next" href="../spec/index.html">
+      
+      
+        
+          <link rel="alternate" href="bgfx.html" hreflang="ja">
+        
+          <link rel="alternate" href="../en/guide/bgfx.html" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../assets/img/icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>背景・エフェクト - 3D Manga Studios</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,300i,400,400i,700,700i%7CInconsolata:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Noto Sans JP";--md-code-font:"Inconsolata"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css?v=98f8d78a">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#new" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../index.html" title="3D Manga Studios" class="md-header__button md-logo" aria-label="3D Manga Studios" data-md-component="logo">
+      
+  <img src="../assets/img/logo ink.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            3D Manga Studios
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              背景・エフェクト
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom" aria-label="ダークモードに切り替え" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="ダークモードに切り替え" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom" aria-label="ライトモードに切り替え" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="ライトモードに切り替え" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="言語切り替え">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="bgfx.html" hreflang="ja" class="md-select__link">
+              日本語
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../en/guide/bgfx.html" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  トップ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../highlights.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  特長
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../getting-started/index.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  はじめに
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="index.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  機能ガイド
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../spec/index.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  マテリアル仕様
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../translation.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  資料
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../faq.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  サポート
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="3D Manga Studios" class="md-nav__button md-logo" aria-label="3D Manga Studios" data-md-component="logo">
+      
+  <img src="../assets/img/logo ink.png" alt="logo">
+
+    </a>
+    3D Manga Studios
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    トップ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../highlights.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    特長
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../getting-started/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    はじめに
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    はじめに
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/install.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    インストール
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/license.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ライセンス認証
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked="">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    機能ガイド
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    機能ガイド
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="scene.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    シーン
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="material.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    マテリアル
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="outline.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    輪郭線
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    背景・エフェクト
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="bgfx.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    背景・エフェクト
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#background-manga-toon-backgrounds-mtb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景 Background · Manga Toon Backgrounds (MTB)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ground-manga-toon-ground-mtg-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        地面 Ground · Manga Toon Ground (MTG)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#effects-manga-toon-effects-mtfx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        エフェクト Effects · Manga Toon Effects (MTFX)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sky-clouds-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        空と雲 Sky · Clouds
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="空と雲 Sky · Clouds">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mesh-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        メッシュとボリューム Mesh · Volume
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#speech-balloons-manga-toon-speech-bubbles-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        吹き出し Speech Balloons · Manga Toon Speech Bubbles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sfx-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        描き文字 SFX Text · Warp · Kerning
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../spec/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    マテリアル仕様
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    マテリアル仕様
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2">
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    作画
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    作画
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spec/mts.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Tone Shader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spec/flat.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Tone Flat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spec/shaded.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Tone Shaded
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spec/mte.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Toon Eye
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spec/mtm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Toon Mouth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3">
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    背景・舞台
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    背景・舞台
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spec/mtb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Toon Backgrounds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spec/mtg.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Toon Ground
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4">
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    演出
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    演出
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spec/mtfx.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Toon Effects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spec/mtsb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Toon Speech Bubbles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    資料
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    資料
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../translation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    翻訳辞書
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7">
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    サポート
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    サポート
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    よくある質問
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    更新履歴
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    利用規約・ライセンス
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#background-manga-toon-backgrounds-mtb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景 Background · Manga Toon Backgrounds (MTB)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ground-manga-toon-ground-mtg-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        地面 Ground · Manga Toon Ground (MTG)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#effects-manga-toon-effects-mtfx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        エフェクト Effects · Manga Toon Effects (MTFX)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sky-clouds-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        空と雲 Sky · Clouds
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="空と雲 Sky · Clouds">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mesh-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        メッシュとボリューム Mesh · Volume
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#speech-balloons-manga-toon-speech-bubbles-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        吹き出し Speech Balloons · Manga Toon Speech Bubbles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sfx-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        描き文字 SFX Text · Warp · Kerning
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="new"><i class="bi bi-stars"></i> 背景・エフェクト：コマを仕上げる <span class="new-label">NEW</span></h1>
+<p>描き込まない背景、影を落とす地面、効果線、漫符、ゲーム風の VFX、墨と筆、空と雲、吹き出し。サムネイルから選んで置き、数値はロックとキーフレームのボタン付きでその場に出ます。</p>
+<h2 id="background-manga-toon-backgrounds-mtb"><i class="bi bi-image-fill"></i> 背景 <span class="en">Background · Manga Toon Backgrounds (MTB)</span></h2>
+<p>背景はすべてワールドとして入ります。物体ではないので、影を落としたり、選択や輪郭線の邪魔になったりしません。<strong>カメラに映るときだけ背景の色、照明としては黒</strong>なので、背景を変えてもキャラクターの陰影は変わりません。</p>
+<div class="ms-tiles ms-shot-tiles">
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/shots/bg_white.webp" data-desc-position="bottom"><img src="../assets/img/shots/bg_white.webp" alt="白" loading="lazy"></a>白</div>
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/shots/bg_black.webp" data-desc-position="bottom"><img src="../assets/img/shots/bg_black.webp" alt="ベタ" loading="lazy"></a>ベタ</div>
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/shots/bg_tone.webp" data-desc-position="bottom"><img src="../assets/img/shots/bg_tone.webp" alt="トーン模様" loading="lazy"></a>トーン模様</div>
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/shots/bg_sky_day.webp" data-desc-position="bottom"><img src="../assets/img/shots/bg_sky_day.webp" alt="空（朝）" loading="lazy"></a>空（朝）</div>
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/shots/bg_sky_sunset.webp" data-desc-position="bottom"><img src="../assets/img/shots/bg_sky_sunset.webp" alt="空（夕方）" loading="lazy"></a>空（夕方）</div>
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/shots/bg_sky_night.webp" data-desc-position="bottom"><img src="../assets/img/shots/bg_sky_night.webp" alt="空（夜）" loading="lazy"></a>空（夜）</div>
+</div>
+
+<p>同じ球・地面・カメラのまま、背景だけを切り替えて撮っています。地面と球の陰影は変わりません。</p>
+<div class="ms-grid2">
+<figure class="ms-shot">
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/ui/panel_bg.webp" data-desc-position="bottom"><img alt="背景のパネル" src="../assets/img/ui/panel_bg.webp"></a></p>
+<figcaption>背景・エフェクト › 背景</figcaption>
+</figure>
+<div>
+<p>トーン模様はアミトーン・カケアミなど 10 種から選び、上下・左右・放射状のグラデを付けられます。トーン素材のマテリアルを「トーンのマテリアル」欄へドラッグ＆ドロップしても切り替わります。</p>
+<p>空の数値を変えたときの見た目は <a href="../spec/mtb.html">マテリアル仕様 › Manga Toon Backgrounds</a> にあります。</p>
+</div>
+</div>
+<h2 id="ground-manga-toon-ground-mtg-new"><i class="bi bi-grid-3x3"></i> 地面 <span class="en">Ground · Manga Toon Ground (MTG)</span> <span class="new-label">NEW</span></h2>
+<div class="ms-grid2">
+<figure class="ms-shot">
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/ui/panel_ground.webp" data-desc-position="bottom"><img alt="地面のパネル" src="../assets/img/ui/panel_ground.webp"></a></p>
+<figcaption>背景・エフェクト › 地面</figcaption>
+</figure>
+<div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/spec/mtg_hero.webp" data-desc-position="bottom"><img src="../assets/img/spec/mtg_hero.webp" alt="Manga Toon Ground の地面に落ちたキーライトの影" style="border:3px solid var(--ms-ink)"></a></p>
+<p>キャラクターの下に地面を敷き、ライトの影を<strong>漫画の平らな影</strong>で描きます。「地面を追加」で大きな地面（一辺 200 m）が入り、「選んだものに使う」で自分の床のメッシュにも同じマテリアルを使えます。地面のマテリアルはシーンに1つです。</p>
+<ul>
+<li><strong>影を落とすライト</strong>：キー・フィル・バックをボタンでオン・オフ。重なった所ほど濃い影に</li>
+<li><strong>影の色・濃さ・ぼかし</strong>：影の色にはトーンのマテリアルも入れられる。ぼかしは地面の影だけに効く</li>
+<li><strong>影だけ（地面を透明に）</strong>：地面を消して、影だけを背景に掛け合わせる</li>
+<li><strong>テクスチャ・凹凸</strong>：画像を上から見て並べて貼る。ノーマルマップで凹凸の陰と照り</li>
+<li><strong>接地の陰（AO）</strong>：物の近くや接地しているところを暗く。くっきりさで漫画の接地影に</li>
+<li><strong>端を消す</strong>：円形／辺に沿って地面を消し、背景になじませる</li>
+</ul>
+</div>
+</div>
+<div class="admonition bubble">
+<p class="admonition-title">影はライトグループから</p>
+<p>影はライトグループの3灯から描きます。グループごとに「地面の影用ライト」が3つ付き、地面だけを照らします。ライトを動かしたあとに影がずれたら、↻（影用ライトをつなぎ直す）を押してください。</p>
+</div>
+<p>細かな設定はプロパティエディターのマテリアルタブ「Manga Toon Ground」に出ます。数値を変えたときの見た目は <a href="../spec/mtg.html">マテリアル仕様 › Manga Toon Ground</a> にあります。</p>
+<h2 id="effects-manga-toon-effects-mtfx"><i class="bi bi-lightning-charge-fill"></i> エフェクト <span class="en">Effects · Manga Toon Effects (MTFX)</span></h2>
+<p>種類で絞り込んで、サムネイルから追加します。画面に対して置くもの（集中線など）はカメラに追従して画面いっぱいに、空間に置くもの（爆発など）は 3D カーソルの位置に入ります。時間は「進み具合」スライダー 0〜1 で決まり、キーフレームを打てばアニメーションになります。</p>
+<div class="ms-chips" id="fxChips" role="group" aria-label="エフェクトの種類"></div>
+<div class="ms-tiles" id="fxGrid" data-base="../"></div>
+
+<div class="ms-grid2">
+<figure class="ms-shot">
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/ui/panel_fx.webp" data-desc-position="bottom"><img alt="エフェクトのパネル" src="../assets/img/ui/panel_fx.webp"></a></p>
+<figcaption>背景・エフェクト › エフェクト</figcaption>
+</figure>
+<div>
+<div class="admonition bubble">
+<p class="admonition-title">パスで描く</p>
+<p>筆跡は「パスで描く」でベジェカーブを作り、点を動かして自由な筆の軌跡にできます。「手描きで描く」でマウスから直接引くこともできます。</p>
+</div>
+<ul>
+<li>作りの違い（画面に描く線・漫画の線画・ゲーム風 VFX・墨と筆）と主な項目は <a href="../spec/mtfx.html">マテリアル仕様 › Manga Toon Effects</a> にあります</li>
+<li>エフェクトは前景・背景の一覧で、選択・入れ替え・表示の切り替え・削除ができます。一覧の行を選ぶと、そのオブジェクトも選択されます</li>
+<li>線・フチ・光などの<strong>色</strong>は、サイドバーの設定にまとめて出ます</li>
+<li>画面に対して置くエフェクトと吹き出しは、カメラを替えたあと「シーンのカメラに合わせる」で今のシーンのカメラに付け直せます</li>
+<li>「カメラの前に平面で置く」で、画面と平行に手前へ置けます</li>
+<li>平面的なエフェクトは、常にカメラの方を向く設定を選べます</li>
+</ul>
+</div>
+</div>
+<h2 id="sky-clouds-new"><i class="bi bi-cloud-fill"></i> 空と雲 <span class="en">Sky · Clouds</span> <span class="new-label">NEW</span></h2>
+<p>空のワールドと 3D の雲には<strong>画風スライダー</strong>があります。0 で白黒の漫画（トーン・雲の輪郭線）、1 で色の付いたアニメ調。時刻・太陽の向き、月の満ち欠け、星、薄明光線、日暈、レンズフレアまで入っています。</p>
+<ul>
+<li>雲は十種雲形＋小さな雲のプリセット</li>
+<li>どの雲も<strong>メッシュ（コミカル）とボリューム（リアル）を雲ごとに切り替えられる</strong>。手前はメッシュ、奥はボリュームのように混ぜられる</li>
+<li>雲の一覧の下の「すべての雲」の「メッシュ」「ボリューム」で、シーンの雲をまとめてそろえられる</li>
+<li>「メッシュから雲」で好きな形の雲を作れる</li>
+<li>リアルな雲（ボリューム）は「リアルな雲の準備」で太陽と EEVEE の設定を自動で整える</li>
+<li>「雲用の太陽を追加」で、リアルな雲だけを照らす白い太陽を足せる（キャラクターの陰影は変わらない）</li>
+</ul>
+<div class="ms-tiles ms-shot-tiles ms-cloud-tiles">
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/shots/cloud_cumulus.webp" data-desc-position="bottom"><img src="../assets/img/shots/cloud_cumulus.webp" alt="積雲" loading="lazy"></a>積雲</div>
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/shots/cloud_cumulonimbus.webp" data-desc-position="bottom"><img src="../assets/img/shots/cloud_cumulonimbus.webp" alt="入道雲" loading="lazy"></a>入道雲</div>
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/shots/cloud_stratocumulus.webp" data-desc-position="bottom"><img src="../assets/img/shots/cloud_stratocumulus.webp" alt="層積雲" loading="lazy"></a>層積雲</div>
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/shots/cloud_stratus.webp" data-desc-position="bottom"><img src="../assets/img/shots/cloud_stratus.webp" alt="層雲" loading="lazy"></a>層雲</div>
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/shots/cloud_nimbostratus.webp" data-desc-position="bottom"><img src="../assets/img/shots/cloud_nimbostratus.webp" alt="乱層雲" loading="lazy"></a>乱層雲</div>
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/shots/cloud_altocumulus.webp" data-desc-position="bottom"><img src="../assets/img/shots/cloud_altocumulus.webp" alt="高積雲（ひつじ雲）" loading="lazy"></a>高積雲（ひつじ雲）</div>
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/shots/cloud_altostratus.webp" data-desc-position="bottom"><img src="../assets/img/shots/cloud_altostratus.webp" alt="高層雲" loading="lazy"></a>高層雲</div>
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/shots/cloud_cirrocumulus.webp" data-desc-position="bottom"><img src="../assets/img/shots/cloud_cirrocumulus.webp" alt="巻積雲（うろこ雲）" loading="lazy"></a>巻積雲（うろこ雲）</div>
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/shots/cloud_cirrostratus.webp" data-desc-position="bottom"><img src="../assets/img/shots/cloud_cirrostratus.webp" alt="巻層雲" loading="lazy"></a>巻層雲</div>
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/shots/cloud_cirrus.webp" data-desc-position="bottom"><img src="../assets/img/shots/cloud_cirrus.webp" alt="巻雲（すじ雲）" loading="lazy"></a>巻雲（すじ雲）</div>
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/shots/cloud_small.webp" data-desc-position="bottom"><img src="../assets/img/shots/cloud_small.webp" alt="小さな雲" loading="lazy"></a>小さな雲</div>
+</div>
+
+<p>各プリセットの雲をそのまま置き、少し下から見上げて雲だけを撮っています（背景は透明。タイルの地の色は見やすさのため）。</p>
+<h4 id="mesh-volume">メッシュとボリューム <span class="en">Mesh · Volume</span></h4>
+<div class="ms-tiles ms-shot-tiles ms-cloud-tiles" style="grid-template-columns:repeat(4,minmax(0,1fr))">
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/shots/cmp_cumulus_mesh.webp" data-desc-position="bottom"><img src="../assets/img/shots/cmp_cumulus_mesh.webp" alt="積雲・メッシュ" loading="lazy"></a>積雲・メッシュ</div>
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/shots/cmp_cumulus_volume.webp" data-desc-position="bottom"><img src="../assets/img/shots/cmp_cumulus_volume.webp" alt="積雲・ボリューム" loading="lazy"></a>積雲・ボリューム</div>
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/shots/cmp_cumulonimbus_mesh.webp" data-desc-position="bottom"><img src="../assets/img/shots/cmp_cumulonimbus_mesh.webp" alt="入道雲・メッシュ" loading="lazy"></a>入道雲・メッシュ</div>
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/shots/cmp_cumulonimbus_volume.webp" data-desc-position="bottom"><img src="../assets/img/shots/cmp_cumulonimbus_volume.webp" alt="入道雲・ボリューム" loading="lazy"></a>入道雲・ボリューム</div>
+</div>
+
+<p>同じ雲を、選んだ雲の設定のいちばん上にある「メッシュ／ボリューム」で切り替えて撮っています。ボリュームは「リアルな雲の準備」で太陽を足した状態です。</p>
+<div class="ms-grid2">
+<figure class="ms-shot">
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/ui/panel_cloud.webp" data-desc-position="bottom"><img alt="雲を選んだときの設定" src="../assets/img/ui/panel_cloud.webp"></a></p>
+<figcaption>背景・エフェクト › エフェクト（雲を選んだとき）</figcaption>
+</figure>
+<div>
+<table>
+<thead>
+<tr>
+<th>場所</th>
+<th>項目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一覧の下</td>
+<td>すべての雲 › メッシュ／ボリューム</td>
+<td>シーンの雲をまとめてそろえる</td>
+</tr>
+<tr>
+<td>選んだ雲の設定のいちばん上</td>
+<td>メッシュ／ボリューム</td>
+<td>その雲だけを切り替える</td>
+</tr>
+</tbody>
+</table>
+<p>ボリュームに切り替えたとき、シーンに太陽が無ければ「雲用の太陽」が自動で入ります。</p>
+</div>
+</div>
+<h2 id="speech-balloons-manga-toon-speech-bubbles-new"><i class="bi bi-chat-fill"></i> 吹き出し <span class="en">Speech Balloons · Manga Toon Speech Bubbles</span> <span class="new-label">NEW</span></h2>
+<div class="ms-grid2">
+<figure class="ms-shot">
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/ui/panel_balloon.webp" data-desc-position="bottom"><img alt="吹き出しのパネル" src="../assets/img/ui/panel_balloon.webp"></a></p>
+<figcaption>背景・エフェクト › 吹き出し</figcaption>
+</figure>
+<div>
+<div class="ms-tiles" style="grid-template-columns:repeat(4,minmax(0,1fr));margin-top:0">
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/fx/balloon_speech.webp" data-desc-position="bottom"><img src="../assets/img/fx/balloon_speech.webp" alt=""></a>通常</div>
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/fx/balloon_shout.webp" data-desc-position="bottom"><img src="../assets/img/fx/balloon_shout.webp" alt=""></a>叫び</div>
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/fx/balloon_thought.webp" data-desc-position="bottom"><img src="../assets/img/fx/balloon_thought.webp" alt=""></a>思考</div>
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/fx/balloon_narration.webp" data-desc-position="bottom"><img src="../assets/img/fx/balloon_narration.webp" alt=""></a>ナレーション</div>
+</div>
+<ul>
+<li>線は実線・点線（ささやき）・震え線（恐怖・弱い声）</li>
+<li>しっぽは先の位置・太さ・曲がり・ギザギザ（電話の声）。「しっぽのパス」で自由な形に</li>
+<li>位置と大きさは画面基準。焦点距離を変えても画面上で同じ</li>
+<li>「吹き出しを反転」で左右・上下を入れ替えられる</li>
+<li>セリフの文字はデザインアプリで入れる前提の「形」です</li>
+</ul>
+<p>吹き出しの層の作りと項目は <a href="../spec/mtsb.html">マテリアル仕様 › Manga Toon Speech Bubbles</a> にあります。</p>
+</div>
+</div>
+<h2 id="sfx-text"><i class="bi bi-fonts"></i> 描き文字 <span class="en">SFX Text · Warp · Kerning</span> <span class="new-label">NEW</span></h2>
+<div class="ms-grid2">
+<div>
+<div class="ms-tiles" style="grid-template-columns:repeat(4,minmax(0,1fr));margin-top:0">
+<div class="ms-tile light"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/warp/warp_none.png" data-desc-position="bottom"><img src="../assets/img/warp/warp_none.png" alt=""></a>なし</div>
+<div class="ms-tile light"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/warp/warp_arc.png" data-desc-position="bottom"><img src="../assets/img/warp/warp_arc.png" alt=""></a>円弧</div>
+<div class="ms-tile light"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/warp/warp_arc_lower.png" data-desc-position="bottom"><img src="../assets/img/warp/warp_arc_lower.png" alt=""></a>下弦</div>
+<div class="ms-tile light"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/warp/warp_arc_upper.png" data-desc-position="bottom"><img src="../assets/img/warp/warp_arc_upper.png" alt=""></a>上弦</div>
+<div class="ms-tile light"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/warp/warp_arch.png" data-desc-position="bottom"><img src="../assets/img/warp/warp_arch.png" alt=""></a>アーチ</div>
+<div class="ms-tile light"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/warp/warp_bulge.png" data-desc-position="bottom"><img src="../assets/img/warp/warp_bulge.png" alt=""></a>でこぼこ</div>
+<div class="ms-tile light"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/warp/warp_shell_lower.png" data-desc-position="bottom"><img src="../assets/img/warp/warp_shell_lower.png" alt=""></a>貝殻（下向き）</div>
+<div class="ms-tile light"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/warp/warp_shell_upper.png" data-desc-position="bottom"><img src="../assets/img/warp/warp_shell_upper.png" alt=""></a>貝殻（上向き）</div>
+<div class="ms-tile light"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/warp/warp_flag.png" data-desc-position="bottom"><img src="../assets/img/warp/warp_flag.png" alt=""></a>旗</div>
+<div class="ms-tile light"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/warp/warp_wave.png" data-desc-position="bottom"><img src="../assets/img/warp/warp_wave.png" alt=""></a>波形</div>
+<div class="ms-tile light"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/warp/warp_fish.png" data-desc-position="bottom"><img src="../assets/img/warp/warp_fish.png" alt=""></a>魚形</div>
+<div class="ms-tile light"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/warp/warp_rise.png" data-desc-position="bottom"><img src="../assets/img/warp/warp_rise.png" alt=""></a>上昇</div>
+<div class="ms-tile light"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/warp/warp_fisheye.png" data-desc-position="bottom"><img src="../assets/img/warp/warp_fisheye.png" alt=""></a>魚眼レンズ</div>
+<div class="ms-tile light"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/warp/warp_inflate.png" data-desc-position="bottom"><img src="../assets/img/warp/warp_inflate.png" alt=""></a>膨張</div>
+<div class="ms-tile light"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/warp/warp_squeeze.png" data-desc-position="bottom"><img src="../assets/img/warp/warp_squeeze.png" alt=""></a>絞り込み</div>
+<div class="ms-tile light"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/img/warp/warp_twist.png" data-desc-position="bottom"><img src="../assets/img/warp/warp_twist.png" alt=""></a>旋回</div>
+</div>
+<p style="font-size:.62rem;color:var(--ms-tone)">ワープのスタイル。サイドバーのプルダウンにも同じアイコンが出ます。</p>
+</div>
+<div>
+<p>エフェクトの「描き文字」は <strong>Blender のテキストオブジェクト</strong>として入ります。文字は自由に打て、イラストレーターのワープのように曲げられます。白黒のフチや線の太さは、ほかの漫画の線画と同じです。</p>
+<ul>
+<li><strong>文字・フォント</strong>：本文、文字の大きさ、字間・語間・行間、斜体（シアー）、揃え。フォントは独立した行のボタンから選び、「似たフォント」で探す・お気に入りに入れる・次のフォントへ送る</li>
+<li><strong>ワープ</strong>：16 種のスタイルから選び、「カーブ」で曲がりの強さ（マイナスで逆向き）、「水平方向のゆがみ」「垂直方向のゆがみ」でパース風に。「なめらかさ」は小さいほど細かく曲がる</li>
+<li><strong>カーニング</strong>：文字を選んで Tab で編集モードに入り、カーソルを置いて <span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-arrow-left">Left</kbd></span> / <span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-arrow-right">Right</kbd></span> で1文字ずつ詰める・広げる</li>
+<li><strong>向き</strong>：ふつうのオブジェクトと同じように回転できます</li>
+<li><strong>カメラに紐づける</strong>：カメラの子にして、カメラを動かしても画面の同じ位置に残す。紐づけたあとも文字は自由に動かせ、「カメラから外す」で元に戻る</li>
+<li>前のバージョンで作った描き文字には「テキストオブジェクトに変換（カーニング・ワープ）」ボタンが出ます。文字・フォント・位置・キーフレームを引き継いで置き換えます</li>
+</ul>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  ページトップへ戻る
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="フッター">
+        
+          
+          <a href="outline.html" class="md-footer__link md-footer__link--prev" aria-label="前: 輪郭線">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                前
+              </span>
+              <div class="md-ellipsis">
+                輪郭線
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../spec/index.html" class="md-footer__link md-footer__link--next" aria-label="次: マテリアル仕様 NEW">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                次
+              </span>
+              <div class="md-ellipsis">
+                マテリアル仕様 NEW
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Adacchi-MultiCreator
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://x.com/3d_manga19094" target="_blank" rel="noopener" title="3D Manga Studios（X）" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M357.2 48h70.6L273.6 224.2 455 464H313L201.7 318.6 74.5 464H3.8l164.9-188.5L-5.2 48h145.6l100.5 132.9zm-24.8 373.8h39.1L119.1 88h-42z"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/Adacchi-MultiCreator/3D-Manga-Studios-Issues" target="_blank" rel="noopener" title="不具合の報告（GitHub Issues）" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "navigation.instant", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../javascripts/dfdemo.js?v=cac9751f"></script>
+      
+        <script src="../javascripts/extra.js?v=dd946d54"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

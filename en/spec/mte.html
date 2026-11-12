@@ -1,0 +1,2442 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for 3D Manga Studios, a Blender add-on for finishing manga panels">
+      
+      
+        <meta name="author" content="Adacchi-MultiCreator">
+      
+      
+        <link rel="canonical" href="https://nekonote-kobo.github.io/3d-manga-studios/en/spec/mte.html">
+      
+      
+        <link rel="prev" href="shaded.html">
+      
+      
+        <link rel="next" href="mtm.html">
+      
+      
+        
+          <link rel="alternate" href="../../spec/mte.html" hreflang="ja">
+        
+          <link rel="alternate" href="mte.html" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../assets/img/icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Manga Toon Eye - 3D Manga Studios</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,300i,400,400i,700,700i%7CInconsolata:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Noto Sans JP";--md-code-font:"Inconsolata"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css?v=98f8d78a">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#manga-toon-eye-new" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="3D Manga Studios" class="md-header__button md-logo" aria-label="3D Manga Studios" data-md-component="logo">
+      
+  <img src="../../assets/img/logo ink.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            3D Manga Studios
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Manga Toon Eye
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../spec/mte.html" hreflang="ja" class="md-select__link">
+              日本語
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="mte.html" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../highlights.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Highlights
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../getting-started/index.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../guide/index.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Feature Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="index.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Material Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../translation.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../faq.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Support
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="3D Manga Studios" class="md-nav__button md-logo" aria-label="3D Manga Studios" data-md-component="logo">
+      
+  <img src="../../assets/img/logo ink.png" alt="logo">
+
+    </a>
+    3D Manga Studios
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../highlights.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Highlights
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../getting-started/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/install.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/license.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License Activation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../guide/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Guide
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Feature Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/scene.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scene
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/material.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Materials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/outline.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outlines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/bgfx.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backgrounds &amp; Effects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Material Reference
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Material Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Drawing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Drawing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mts.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Tone Shader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="flat.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Tone Flat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="shaded.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Tone Shaded
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Toon Eye
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="mte.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Toon Eye
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#layer-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node tree
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eyeball" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eyeball
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eye-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eye Effect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iris-color" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Iris Color
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pupil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pupil
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Highlights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lid-shadow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lid Shadow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iris-texture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Iris Texture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iris-rim-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Iris Rim / Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iris-outline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Iris Outline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lower-glow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lower Glow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#light-shading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Light Shading
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sclera" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sclera
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mtm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Toon Mouth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3">
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backgrounds &amp; Stage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Backgrounds &amp; Stage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mtb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Toon Backgrounds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mtg.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Toon Ground
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4">
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Effects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Effects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mtfx.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Toon Effects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mtsb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Toon Speech Bubbles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../translation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Translation Dictionary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7">
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Support
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terms &amp; License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#layer-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node tree
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eyeball" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eyeball
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eye-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eye Effect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iris-color" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Iris Color
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pupil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pupil
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Highlights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lid-shadow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lid Shadow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iris-texture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Iris Texture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iris-rim-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Iris Rim / Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iris-outline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Iris Outline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lower-glow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lower Glow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#light-shading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Light Shading
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sclera" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sclera
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="manga-toon-eye-new"><i class="bi bi-eye-fill"></i> Manga Toon Eye <span class="new-label">NEW</span></h1>
+<figure class="ms-page-hero"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/hero/hero_mte.webp" data-desc-position="bottom"><img src="../../assets/img/hero/hero_mte.webp" alt="A render using Manga Toon Eye"></a></figure>
+
+<p style="font-family:var(--md-code-font);font-size:.62rem;color:var(--ms-guide-ink);letter-spacing:.06em">MTE · Material › Manga Toon Eye [material name] › MTS Parallax Eye</p>
+
+<p>A <strong>parallax</strong> eye that makes the iris look like it sits inside the curved eyeball. The material shows only one outer group; inside it, the steps run in the order "position → look → effect → composite". The look settings are listed in the Properties Editor, Material tab, under "Manga Toon Eye".</p>
+<h2 id="layer-stack"><i class="bi bi-layers-fill"></i> Layer stack</h2>
+<p>Layers are drawn on the curved eyeball, from the bottom layer up.</p>
+<div class="ms-stack" id="stack-mte"></div>
+
+<h2 id="node-tree"><i class="bi bi-diagram-2-fill"></i> Node tree</h2>
+<div class="ms-graph"><div class="flow"><div class="ms-node"><div class="hd h-geo">Drivers (automatic)</div><div class="bd">Eye position, gaze X / Y<i>From the look target</i><i>Left/right, rotation</i></div></div><div class="wire"></div><div class="ms-node big sel"><div class="hd h-group">Manga Toon Eye [material name]</div><div class="bd">MTS Parallax Eye<i>Position → look → effect → composite</i><i>The image (iris texture) is inside too</i></div></div><div class="wire"></div><div class="ms-node"><div class="hd h-group">Screen Tone</div><div class="bd">Screentone for the manga style</div></div><div class="wire"></div><div class="ms-node"><div class="hd h-out">Material Output</div><div class="bd">Surface</div></div></div></div>
+
+<div class="admonition note">
+<p>There are two styles: "Anime" and "Manga" (black and white, ink lines). The group has a version number; older groups are rebuilt automatically and keep their values.</p>
+</div>
+<h2 id="inputs"><i class="bi bi-sliders2"></i> Inputs</h2>
+<p>Each row of 5 spheres (eye, mouth, sky) shows <strong>the value changing from left to right</strong>. The values are written under each image. The yellow cell is the setting's default; all other settings stay at their defaults.</p>
+<details class="info">
+<summary>MTS Parallax Eye settings</summary>
+<table>
+<thead>
+<tr>
+<th>Panel</th>
+<th>Setting</th>
+<th>English Name</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Eyeball</td>
+<td><a href="#mte-eyeball-eye-scale">Eye Scale</a></td>
+<td><code>Eye Scale</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td>Eyeball</td>
+<td><a href="#mte-eyeball-brightness">Brightness</a></td>
+<td><code>Brightness</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td>Eye Effect</td>
+<td><a href="#mte-eye-effect-image">Effect Image</a></td>
+<td>—</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Eye Effect</td>
+<td><a href="#mte-eye-effect-placement">Effect Placement</a></td>
+<td><code>Follow Iris</code></td>
+<td>Follow Iris</td>
+</tr>
+<tr>
+<td>Eye Effect</td>
+<td><a href="#mte-eye-effect-display">Eye Display</a></td>
+<td><code>Eye Display</code></td>
+<td>Eye + Effect</td>
+</tr>
+<tr>
+<td>Eye Effect</td>
+<td><a href="#mte-eye-effect-size">Effect Size</a></td>
+<td><code>Effect Size</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td>Eye Effect</td>
+<td><a href="#mte-eye-effect-brightness">Effect Brightness</a></td>
+<td><code>Effect Brightness</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td>Eye Effect</td>
+<td><a href="#mte-eye-effect-x">Effect X</a> / <a href="#mte-eye-effect-y">Y</a></td>
+<td><code>Effect Position</code></td>
+<td>0 / 0</td>
+</tr>
+<tr>
+<td>Iris Color</td>
+<td><a href="#mte-iris-color-iris-size">Iris Size</a></td>
+<td><code>Iris Size</code></td>
+<td>0.52</td>
+</tr>
+<tr>
+<td>Pupil</td>
+<td><a href="#mte-pupil-pupil-size">Pupil Size</a></td>
+<td><code>Pupil Size</code></td>
+<td>0.42</td>
+</tr>
+<tr>
+<td>Pupil</td>
+<td><a href="#mte-pupil-pupil-shape">Pupil Shape</a></td>
+<td><code>Pupil Shape</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td>Highlights</td>
+<td><a href="#mte-highlights-highlight-size">Highlight Size</a></td>
+<td><code>Highlight Size</code></td>
+<td>0.2</td>
+</tr>
+<tr>
+<td>Highlights</td>
+<td><a href="#mte-highlights-highlight-x">Highlight X</a></td>
+<td><code>Highlight X</code></td>
+<td>0.28</td>
+</tr>
+<tr>
+<td>Lid Shadow</td>
+<td><a href="#mte-lid-shadow-lid-shadow-height">Lid Shadow Height</a></td>
+<td><code>Lid Shadow Height</code></td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>Iris Texture</td>
+<td><a href="#mte-iris-texture-mix">Texture Mix</a></td>
+<td><code>Texture Mix</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td>Iris Texture</td>
+<td><a href="#mte-iris-texture-multiply">Texture Multiply</a></td>
+<td><code>Texture Multiply</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td>Iris Texture</td>
+<td><a href="#mte-iris-texture-scale">Texture Scale</a></td>
+<td><code>Texture Scale</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td>Iris Texture</td>
+<td><a href="#mte-iris-texture-rotation">Texture Rotation</a></td>
+<td><code>Texture Rotation</code></td>
+<td>0°</td>
+</tr>
+<tr>
+<td>Iris Rim / Pattern</td>
+<td><a href="#mte-iris-rim-pattern-limbal-ring">Limbal Ring</a></td>
+<td><code>Limbal Ring</code></td>
+<td>0.7</td>
+</tr>
+<tr>
+<td>Iris Rim / Pattern</td>
+<td><a href="#mte-iris-rim-pattern-pattern-amount">Pattern Amount</a></td>
+<td><code>Pattern Amount</code></td>
+<td>0.35</td>
+</tr>
+<tr>
+<td>Iris Rim / Pattern</td>
+<td><a href="#mte-iris-rim-pattern-pattern-scale">Pattern Scale</a></td>
+<td><code>Pattern Scale</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td>Iris Outline</td>
+<td><a href="#mte-iris-outline-ink-width">Ink Width</a></td>
+<td><code>Ink Width</code></td>
+<td>0.08</td>
+</tr>
+<tr>
+<td>Lower Glow</td>
+<td><a href="#mte-lower-glow-glow-amount">Glow Amount</a></td>
+<td><code>Glow Amount</code></td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>Lower Glow</td>
+<td><a href="#mte-lower-glow-glow-offset">Glow Offset</a></td>
+<td><code>Glow Offset</code></td>
+<td>0.45</td>
+</tr>
+<tr>
+<td>Light Shading</td>
+<td><a href="#mte-light-shading-shadow-threshold">Shadow Threshold</a></td>
+<td><code>Shadow Threshold</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td>Sclera</td>
+<td><a href="#mte-sclera-sclera-shade">Sclera Shade</a></td>
+<td><code>Sclera Shade</code></td>
+<td>0.35</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h3 id="eyeball">Eyeball</h3>
+<div class="ms-prop" id="mte-eyeball-eye-scale"><div class="ph"><strong>Eye Scale</strong><code>Eye Scale</code><span class="chips"><span class="chip p">Default 1</span><span class="chip">Compared 0.6 → 1.4</span></span></div><p class="desc">Scales the iris and pupil together.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mte_look_x.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mte_look_x.webp" alt="Eye Scale compared at 0.6, 0.8, 1, 1.2 and 1.4"></a><div class="ms-vals" style="--n:5"><span>0.6</span><span>0.8</span><span class="def">1</span><span>1.2</span><span>1.4</span></div></div>
+
+<div class="ms-prop" id="mte-eyeball-brightness"><div class="ph"><strong>Brightness</strong><code>Brightness</code><span class="chips"><span class="chip p">Default 1</span><span class="chip">Compared 0.4 → 2.5</span></span></div><p class="desc">The brightness of the whole eye.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mte_brightness.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mte_brightness.webp" alt="Brightness compared at 0.4, 0.7, 1, 1.5 and 2.5"></a><div class="ms-vals" style="--n:5"><span>0.4</span><span>0.7</span><span class="def">1</span><span>1.5</span><span>2.5</span></div></div>
+
+<h3 id="eye-effect">Eye Effect</h3>
+<p>Lays an image with transparency (PNG) on the very top layer of the eye. You can draw manga "eye expressions" such as hearts, sparkles or swirls straight into the eye. Pick an image under Properties Editor › Material › the eye's "Eye Effect", and the settings below appear.</p>
+<div class="ms-tiles" style="grid-template-columns:repeat(auto-fill,minmax(110px,1fr))">
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/eye_fx_sparkle.png" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/eye_fx_sparkle.png" alt="" style="background:#3a3a3a;object-fit:contain"></a>Sparkle</div>
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/eye_fx_heart.png" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/eye_fx_heart.png" alt="" style="background:#3a3a3a;object-fit:contain"></a>Heart</div>
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/eye_fx_swirl.png" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/eye_fx_swirl.png" alt="" style="background:#3a3a3a;object-fit:contain"></a>Swirl</div>
+</div>
+
+<p style="font-size:.64rem;color:var(--ms-tone)">The PNGs used for the comparisons (512 × 512, transparent background). All are original images you are free to use.</p>
+
+<div class="ms-prop" id="mte-eye-effect-image"><div class="ph"><strong>Effect Image</strong><code>Image</code><span class="chips"><span class="chip">PNG (with transparency)</span></span></div><p class="desc">The image to lay on top. The eye below shows through the transparent parts. The rightmost image uses the "Whole Eye" placement, so the effect spreads beyond the iris.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mte_fx_images.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mte_fx_images.webp" alt="Comparison of no effect, sparkle, heart, swirl, and sparkle (Whole Eye)"></a><div class="ms-vals" style="--n:5"><span>None</span><span>Sparkle</span><span>Heart</span><span>Swirl</span><span>Sparkle (Whole Eye)</span></div></div>
+
+<div class="ms-prop" id="mte-eye-effect-placement"><div class="ph"><strong>Effect Placement</strong><code>Follow Iris</code><span class="chips"><span class="chip p">Default Follow Iris</span></span></div><p class="desc"><b>Follow Iris</b>: the image center sticks to the iris center and moves with the gaze. Its size is also set to match the iris.<br><b>Whole Eye</b>: the image covers the whole eye plane and does not move when the gaze moves.<br><b>Mirror Left Eye</b>: when on, the image on the left eye is flipped horizontally so both eyes are symmetrical.</p></div>
+
+<div class="ms-prop" id="mte-eye-effect-display"><div class="ph"><strong>Eye Display</strong><code>Eye Display</code><span class="chips"><span class="chip p">Default Eye + Effect</span></span></div><p class="desc">Use "Eye Display" in the Sidebar to choose what is drawn in the eye. "Sclera + Effect" hides the iris and highlights and draws only the effect on the sclera. "Hide Eye" draws nothing. With Auto Keying on, a keyframe with no interpolation (constant) is inserted.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mte_fx_display.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mte_fx_display.webp" alt="Comparison of Eye, Eye + Effect, Sclera + Effect and Hide Eye"></a><div class="ms-vals" style="--n:5"><span>Eye</span><span class="def">Eye + Effect</span><span>Sclera + Effect</span><span>Hide Eye</span><span> </span></div></div>
+
+<div class="ms-prop" id="mte-eye-effect-size"><div class="ph"><strong>Effect Size</strong><code>Effect Size</code><span class="chips"><span class="chip p">Default 1</span><span class="chip">Compared 0.4 → 1.6</span></span></div><p class="desc">The size of the effect. With Follow Iris, 1 is about the same size as the iris.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mte_fx_size.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mte_fx_size.webp" alt="Effect Size compared at 0.4, 0.7, 1, 1.3 and 1.6"></a><div class="ms-vals" style="--n:5"><span>0.4</span><span>0.7</span><span class="def">1</span><span>1.3</span><span>1.6</span></div></div>
+
+<div class="ms-prop" id="mte-eye-effect-brightness"><div class="ph"><strong>Effect Brightness</strong><code>Effect Brightness</code><span class="chips"><span class="chip p">Default 1</span><span class="chip">Compared 0.25 → 2</span></span></div><p class="desc">The brightness of the effect. Lower values make it darker and recede; higher values make it bright and stand out.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mte_fx_brightness.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mte_fx_brightness.webp" alt="Effect Brightness compared at 0.25, 0.5, 1, 1.5 and 2"></a><div class="ms-vals" style="--n:5"><span>0.25</span><span>0.5</span><span class="def">1</span><span>1.5</span><span>2</span></div></div>
+
+<div class="ms-prop" id="mte-eye-effect-x"><div class="ph"><strong>Effect X</strong><code>Effect Position X</code><span class="chips"><span class="chip p">Default 0</span><span class="chip">Compared -0.3 → 0.3</span></span></div><p class="desc">Shifts the effect left or right.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mte_fx_x.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mte_fx_x.webp" alt="Effect X compared at -0.3, -0.15, 0, 0.15 and 0.3"></a><div class="ms-vals" style="--n:5"><span>-0.3</span><span>-0.15</span><span class="def">0</span><span>0.15</span><span>0.3</span></div></div>
+
+<div class="ms-prop" id="mte-eye-effect-y"><div class="ph"><strong>Effect Y</strong><code>Effect Position Y</code><span class="chips"><span class="chip p">Default 0</span><span class="chip">Compared -0.3 → 0.3</span></span></div><p class="desc">Shifts the effect up or down. You can also move it with the control pad in the panel (drag the dot), or with a bone (Effect Bone).</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mte_fx_y.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mte_fx_y.webp" alt="Effect Y compared at -0.3, -0.15, 0, 0.15 and 0.3"></a><div class="ms-vals" style="--n:5"><span>-0.3</span><span>-0.15</span><span class="def">0</span><span>0.15</span><span>0.3</span></div></div>
+
+<h3 id="iris-color">Iris Color</h3>
+<div class="ms-prop" id="mte-iris-color-iris-size"><div class="ph"><strong>Iris Size</strong><code>Iris Size</code><span class="chips"><span class="chip p">Default 0.52</span><span class="chip">Compared 0.3 → 0.8</span></span></div><p class="desc">The size of the iris.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mte_iris_size.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mte_iris_size.webp" alt="Iris Size compared at 0.3, 0.4, 0.52, 0.65 and 0.8"></a><div class="ms-vals" style="--n:5"><span>0.3</span><span>0.4</span><span class="def">0.52</span><span>0.65</span><span>0.8</span></div></div>
+
+<h3 id="pupil">Pupil</h3>
+<div class="ms-prop" id="mte-pupil-pupil-size"><div class="ph"><strong>Pupil Size</strong><code>Pupil Size</code><span class="chips"><span class="chip p">Default 0.42</span><span class="chip">Compared 0.1 → 0.8</span></span></div><p class="desc">The size of the pupil.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mte_pupil_size.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mte_pupil_size.webp" alt="Pupil Size compared at 0.1, 0.25, 0.42, 0.6 and 0.8"></a><div class="ms-vals" style="--n:5"><span>0.1</span><span>0.25</span><span class="def">0.42</span><span>0.6</span><span>0.8</span></div></div>
+
+<div class="ms-prop" id="mte-pupil-pupil-shape"><div class="ph"><strong>Pupil Shape</strong><code>Pupil Shape</code><span class="chips"><span class="chip p">Default 0</span><span class="chip">Compared 0 → 3</span></span></div><p class="desc">0 = circle, 1 = polygon, 2 = star, 3 = heart.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mte_pupil_shape.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mte_pupil_shape.webp" alt="Pupil Shape compared at 0, 1, 2 and 3"></a><div class="ms-vals" style="--n:4"><span class="def">0</span><span>1</span><span>2</span><span>3</span></div></div>
+
+<h3 id="highlights">Highlights</h3>
+<div class="ms-prop" id="mte-highlights-highlight-size"><div class="ph"><strong>Highlight Size</strong><code>Highlight Size</code><span class="chips"><span class="chip p">Default 0.2</span><span class="chip">Compared 0.05 → 0.45</span></span></div><p class="desc">The size of the largest highlight (Highlight 1).</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mte_highlight_size.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mte_highlight_size.webp" alt="Highlight Size compared at 0.05, 0.12, 0.2, 0.3 and 0.45"></a><div class="ms-vals" style="--n:5"><span>0.05</span><span>0.12</span><span class="def">0.2</span><span>0.3</span><span>0.45</span></div></div>
+
+<div class="ms-prop" id="mte-highlights-highlight-x"><div class="ph"><strong>Highlight X</strong><code>Highlight X</code><span class="chips"><span class="chip p">Default 0.28</span><span class="chip">Compared -0.6 → 0.6</span></span></div><p class="desc">The left/right position of Highlight 1.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mte_highlight_x.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mte_highlight_x.webp" alt="Highlight X compared at -0.6, -0.3, 0, 0.3 and 0.6"></a><div class="ms-vals" style="--n:5"><span>-0.6</span><span>-0.3</span><span>0</span><span>0.3</span><span>0.6</span></div></div>
+
+<h3 id="lid-shadow">Lid Shadow</h3>
+<div class="ms-prop" id="mte-lid-shadow-lid-shadow-height"><div class="ph"><strong>Lid Shadow Height</strong><code>Lid Shadow Height</code><span class="chips"><span class="chip p">Default 0.5</span><span class="chip">Compared -1 → 1</span></span></div><p class="desc">How far the upper eyelid's shadow comes down. The more negative the value, the lower the shadow reaches, darkening the sclera and iris. Positive values pull the shadow up, and at 1 it is almost gone (with strength 1 and a deep purple shadow color).</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mte_lid_height.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mte_lid_height.webp" alt="Lid Shadow Height compared at -1, -0.5, 0, 0.5 and 1"></a><div class="ms-vals" style="--n:5"><span>-1</span><span>-0.5</span><span>0</span><span class="def">0.5</span><span>1</span></div></div>
+
+<h3 id="iris-texture">Iris Texture</h3>
+<p>Puts an image on the iris. When you pick an image, it fills the iris, with the image center at the iris center. The pupil, highlights and reflection are drawn on top of the texture. If the slot does not appear on an older eye, run the setup again to enable it.</p>
+<div class="ms-tiles" style="grid-template-columns:repeat(auto-fill,minmax(110px,1fr))">
+<div class="ms-tile"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/eye_iris_tiles.png" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/eye_iris_tiles.png" alt="An image of differently colored tiles in a 4 × 4 grid" style="background:#3a3a3a;object-fit:contain"></a>Image used for the comparisons</div>
+</div>
+
+<div class="ms-prop" id="mte-iris-texture-mix"><div class="ph"><strong>Texture Mix</strong><code>Texture Mix</code><span class="chips"><span class="chip p">Default 1</span><span class="chip">Compared 0 → 1</span></span></div><p class="desc">How much the texture covers the iris color. 0 gives the original iris color; 1 gives the texture's color.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mte_itex_mix.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mte_itex_mix.webp" alt="Texture Mix compared at 0, 0.25, 0.5, 0.75 and 1"></a><div class="ms-vals" style="--n:5"><span>0</span><span>0.25</span><span>0.5</span><span>0.75</span><span class="def">1</span></div></div>
+
+<div class="ms-prop" id="mte-iris-texture-multiply"><div class="ph"><strong>Texture Multiply</strong><code>Texture Multiply</code><span class="chips"><span class="chip p">Default 0</span><span class="chip">Compared 0 → 1</span></span></div><p class="desc">The higher the value, the more the texture is multiplied with the iris color. Use it when you want to keep the iris color and use only the light and dark of the pattern.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mte_itex_multiply.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mte_itex_multiply.webp" alt="Texture Multiply compared at 0, 0.25, 0.5, 0.75 and 1"></a><div class="ms-vals" style="--n:5"><span class="def">0</span><span>0.25</span><span>0.5</span><span>0.75</span><span>1</span></div></div>
+
+<div class="ms-prop" id="mte-iris-texture-scale"><div class="ph"><strong>Texture Scale</strong><code>Texture Scale</code><span class="chips"><span class="chip p">Default 1</span><span class="chip">Compared 0.5 → 2</span></span></div><p class="desc">The size of the texture. At 1 it fills the iris. Below 1, the area outside the image shows the original iris color; above 1, the center of the image is enlarged.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mte_itex_scale.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mte_itex_scale.webp" alt="Texture Scale compared at 0.5, 0.75, 1, 1.5 and 2"></a><div class="ms-vals" style="--n:5"><span>0.5</span><span>0.75</span><span class="def">1</span><span>1.5</span><span>2</span></div></div>
+
+<div class="ms-prop" id="mte-iris-texture-rotation"><div class="ph"><strong>Texture Rotation</strong><code>Texture Rotation</code><span class="chips"><span class="chip p">Default 0°</span><span class="chip">Compared 0° → 180°</span></span></div><p class="desc">Rotates the texture around the iris center (shown with the colored-tile image; the position of the red row at the top shows the direction). Turn on "Texture Mirror Left" to flip the texture horizontally on the left eye.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mte_itex_rotation.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mte_itex_rotation.webp" alt="Texture Rotation compared at 0°, 45°, 90°, 135° and 180°"></a><div class="ms-vals" style="--n:5"><span class="def">0°</span><span>45°</span><span>90°</span><span>135°</span><span>180°</span></div></div>
+
+<h3 id="iris-rim-pattern">Iris Rim / Pattern</h3>
+<div class="ms-prop" id="mte-iris-rim-pattern-limbal-ring"><div class="ph"><strong>Limbal Ring</strong><code>Limbal Ring</code><span class="chips"><span class="chip p">Default 0.7</span><span class="chip">Compared 0 → 1</span></span></div><p class="desc">A ring that darkens the edge of the iris.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mte_limbal.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mte_limbal.webp" alt="Limbal Ring compared at 0, 0.25, 0.5, 0.75 and 1"></a><div class="ms-vals" style="--n:5"><span>0</span><span>0.25</span><span>0.5</span><span>0.75</span><span>1</span></div></div>
+
+<div class="ms-prop" id="mte-iris-rim-pattern-pattern-amount"><div class="ph"><strong>Pattern Amount</strong><code>Pattern Amount</code><span class="chips"><span class="chip p">Default 0.35</span><span class="chip">Compared 0 → 1</span></span></div><p class="desc">The strength of the radial pattern in the iris.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mte_pattern.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mte_pattern.webp" alt="Pattern Amount compared at 0, 0.25, 0.5, 0.75 and 1"></a><div class="ms-vals" style="--n:5"><span>0</span><span>0.25</span><span>0.5</span><span>0.75</span><span>1</span></div></div>
+
+<div class="ms-prop" id="mte-iris-rim-pattern-pattern-scale"><div class="ph"><strong>Pattern Scale</strong><code>Pattern Scale</code><span class="chips"><span class="chip p">Default 1</span><span class="chip">Compared 0.3 → 8</span></span></div><p class="desc">How fine the pattern is (with Pattern Amount 0.8).</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mte_pattern_scale.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mte_pattern_scale.webp" alt="Pattern Scale compared at 0.3, 1, 2, 4 and 8"></a><div class="ms-vals" style="--n:5"><span>0.3</span><span class="def">1</span><span>2</span><span>4</span><span>8</span></div></div>
+
+<h3 id="iris-outline">Iris Outline</h3>
+<div class="ms-prop" id="mte-iris-outline-ink-width"><div class="ph"><strong>Ink Width</strong><code>Ink Width</code><span class="chips"><span class="chip p">Default 0.08</span><span class="chip">Compared 0 → 0.3</span></span></div><p class="desc">The ink line around the iris (when turned on).</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mte_ink_width.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mte_ink_width.webp" alt="Ink Width compared at 0, 0.05, 0.1, 0.2 and 0.3"></a><div class="ms-vals" style="--n:5"><span>0</span><span>0.05</span><span>0.1</span><span>0.2</span><span>0.3</span></div></div>
+
+<h3 id="lower-glow">Lower Glow</h3>
+<div class="ms-prop" id="mte-lower-glow-glow-amount"><div class="ph"><strong>Glow Amount</strong><code>Glow Amount</code><span class="chips"><span class="chip p">Default 0.5</span><span class="chip">Compared 0 → 1</span></span></div><p class="desc">The bright reflection in the lower part of the iris.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mte_glow.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mte_glow.webp" alt="Glow Amount compared at 0, 0.25, 0.5, 0.75 and 1"></a><div class="ms-vals" style="--n:5"><span>0</span><span>0.25</span><span class="def">0.5</span><span>0.75</span><span>1</span></div></div>
+
+<div class="ms-prop" id="mte-lower-glow-glow-offset"><div class="ph"><strong>Glow Offset</strong><code>Glow Offset</code><span class="chips"><span class="chip p">Default 0.45</span><span class="chip">Compared -1 → 1</span></span></div><p class="desc">The position of the reflection. Negative values move it up.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mte_glow_offset.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mte_glow_offset.webp" alt="Glow Offset compared at -1, -0.5, 0, 0.45 and 1"></a><div class="ms-vals" style="--n:5"><span>-1</span><span>-0.5</span><span>0</span><span class="def">0.45</span><span>1</span></div></div>
+
+<h3 id="light-shading">Light Shading</h3>
+<div class="ms-prop" id="mte-light-shading-shadow-threshold"><div class="ph"><strong>Shadow Threshold</strong><code>Shadow Threshold</code><span class="chips"><span class="chip p">Default 1</span><span class="chip">Compared 0 → 4</span></span></div><p class="desc">How much shadow the RGB lights cast on the eye. Raising it spreads the shadow and darkens the eye.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mte_shadow_threshold.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mte_shadow_threshold.webp" alt="Shadow Threshold compared at 0, 0.5, 1, 2 and 4"></a><div class="ms-vals" style="--n:5"><span>0</span><span>0.5</span><span class="def">1</span><span>2</span><span>4</span></div></div>
+
+<h3 id="sclera">Sclera</h3>
+<div class="ms-prop" id="mte-sclera-sclera-shade"><div class="ph"><strong>Sclera Shade</strong><code>Sclera Shade</code><span class="chips"><span class="chip p">Default 0.35</span><span class="chip">Compared 0 → 1</span></span></div><p class="desc">The shading around the edge of the sclera.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mte_sclera_shade.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mte_sclera_shade.webp" alt="Sclera Shade compared at 0, 0.25, 0.5, 0.75 and 1"></a><div class="ms-vals" style="--n:5"><span>0</span><span>0.25</span><span>0.5</span><span>0.75</span><span>1</span></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="shaded.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Manga Tone Shaded">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Manga Tone Shaded
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="mtm.html" class="md-footer__link md-footer__link--next" aria-label="Next: Manga Toon Mouth">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Manga Toon Mouth
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Adacchi-MultiCreator
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://x.com/3d_manga19094" target="_blank" rel="noopener" title="3D Manga Studios (X)" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M357.2 48h70.6L273.6 224.2 455 464H313L201.7 318.6 74.5 464H3.8l164.9-188.5L-5.2 48h145.6l100.5 132.9zm-24.8 373.8h39.1L119.1 88h-42z"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/Adacchi-MultiCreator/3D-Manga-Studios-Issues" target="_blank" rel="noopener" title="Report a bug (GitHub Issues)" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "navigation.instant", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/dfdemo.js?v=cac9751f"></script>
+      
+        <script src="../../javascripts/extra.js?v=dd946d54"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
