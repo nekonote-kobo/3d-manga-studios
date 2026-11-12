@@ -1,0 +1,2330 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for 3D Manga Studios, a Blender add-on for finishing manga panels">
+      
+      
+        <meta name="author" content="Adacchi-MultiCreator">
+      
+      
+        <link rel="canonical" href="https://nekonote-kobo.github.io/3d-manga-studios/1.2/en/spec/mtg.html">
+      
+      
+        <link rel="prev" href="mtb.html">
+      
+      
+        <link rel="next" href="mtfx.html">
+      
+      
+        
+          <link rel="alternate" href="../../spec/mtg.html" hreflang="ja">
+        
+          <link rel="alternate" href="mtg.html" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../assets/img/icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Manga Toon Ground - 3D Manga Studios</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,300i,400,400i,700,700i%7CInconsolata:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Noto Sans JP";--md-code-font:"Inconsolata"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css?v=98f8d78a">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#manga-toon-ground-ground-new" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden="">
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="3D Manga Studios" class="md-header__button md-logo" aria-label="3D Manga Studios" data-md-component="logo">
+      
+  <img src="../../assets/img/logo ink.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            3D Manga Studios
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Manga Toon Ground
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../spec/mtg.html" hreflang="ja" class="md-select__link">
+              日本語
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="mtg.html" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../highlights.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Highlights
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../getting-started/index.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../guide/index.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Feature Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="index.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Material Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../translation.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../faq.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Support
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="3D Manga Studios" class="md-nav__button md-logo" aria-label="3D Manga Studios" data-md-component="logo">
+      
+  <img src="../../assets/img/logo ink.png" alt="logo">
+
+    </a>
+    3D Manga Studios
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../highlights.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Highlights
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../getting-started/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/install.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/license.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License Activation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../guide/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Guide
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Feature Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/scene.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scene
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/material.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Materials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/outline.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outlines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/bgfx.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backgrounds &amp; Effects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Material Reference
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Material Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2">
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Drawing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Drawing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mts.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Tone Shader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="flat.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Tone Flat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="shaded.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Tone Shaded
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mte.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Toon Eye
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mtm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Toon Mouth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backgrounds &amp; Stage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Backgrounds &amp; Stage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mtb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Toon Backgrounds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Toon Ground
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="mtg.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Toon Ground
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#layer-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node tree
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ground" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ground
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#texture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Texture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shadow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shadow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ambient-occlusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ambient Occlusion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fade
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4">
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Effects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Effects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mtfx.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Toon Effects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mtsb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manga Toon Speech Bubbles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../translation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Translation Dictionary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7">
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Support
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terms &amp; License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#layer-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node tree
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ground" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ground
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#texture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Texture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shadow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shadow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ambient-occlusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ambient Occlusion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fade
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="manga-toon-ground-ground-new"><i class="bi bi-grid-3x3"></i> Manga Toon Ground (Ground) <span class="new-label">NEW</span></h1>
+<figure class="ms-page-hero"><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/hero/hero_mtg.webp" data-desc-position="bottom"><img src="../../assets/img/hero/hero_mtg.webp" alt="A render using Manga Toon Ground"></a></figure>
+
+<p style="font-family:var(--md-code-font);font-size:.62rem;color:var(--ms-guide-ink);letter-spacing:.06em">MTG · Material › Manga Toon Ground</p>
+
+<p>A material made just for the ground under your characters. It draws the shadows of the key, fill and back lights, each switchable on or off per light, as a <strong>flat shadow color (screentone can be used too)</strong>. You can also make the ground transparent so only the shadow lies over the background, or fade out its edges so it blends into the background.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mtg_hero.webp" data-desc-position="bottom"><img src="../../assets/img/spec/mtg_hero.webp" alt="Ground using Manga Toon Ground (texture, bumps, AO, key light shadow)" style="border:3px solid var(--ms-ink)"></a></p>
+<h2 id="layer-stack"><i class="bi bi-layers-fill"></i> Layer stack</h2>
+<p>The texture, bumps, shadows and AO are multiplied over the ground color.</p>
+<div class="ms-stack" id="stack-mtg"></div>
+
+<h2 id="node-tree"><i class="bi bi-diagram-2-fill"></i> Node tree</h2>
+<div class="ms-graph"><div class="flow"><div class="col"><div class="ms-node"><div class="hd h-tex">MTG Texture Image</div><div class="bd">Ground image<i>Tiled, projected from above</i></div></div><div class="ms-node"><div class="hd h-tex">MTG Normal Map</div><div class="bd">Bump image</div></div><div class="ms-node"><div class="hd h-math">MTG Fade Position → Fade Ramp</div><div class="bd">How the edges fade<i>Circular / along the edges</i></div></div><div class="ms-node"><div class="hd h-math">Drivers (automatic)</div><div class="bd">Shadow light direction and strength</div></div></div><div class="wire"></div><div class="ms-node big sel"><div class="hd h-group">Manga Toon Ground</div><div class="bd">Shadows, bumps, AO, edge fade<i>Output is emission (flat fill)</i><i>Shadow Only = transparent × shadow color</i></div></div><div class="wire"></div><div class="ms-node"><div class="hd h-out">Material Output</div><div class="bd">Surface</div></div></div></div>
+
+<div class="ms-pipe"><div><em>1</em><b>Find the shadows</b><span>White diffuse → Shader to RGB → R, G, B (key, fill, back). Divided by the unshadowed brightness so that lit = 1 and shadow = 0</span></div><div><em>2</em><b>Set the edge</b><span>Shadow Softness plus the Shadow Blur width make the shadow crisp or soft</span></div><div><em>3</em><b>Multiply</b><span>Ground color × texture × bump shade → bump highlights → shadows (per light) × AO</span></div><div><em>4</em><b>Output</b><span>Flat fill with emission. Shadow Only and Fade Edges switch to transparent</span></div></div>
+
+<div class="admonition bubble">
+<p class="admonition-title">Only the shadow lights light the ground</p>
+<p>The ground gets three "ground shadow lights" per light group, with the same direction, color and strength as the key, fill and back lights. Regular lights do not light the ground (they are excluded with Light Linking), so raising Shadow Blur (the shadow light angle) does not change the character's shadows.</p>
+</div>
+<h2 id="inputs"><i class="bi bi-sliders2"></i> Inputs</h2>
+<p>Each row of 5 images shows <strong>the value changing from left to right</strong>. The values are written under each image. The yellow cell is the setting's default. Images use Texture Strength 0 and no normal map; all settings other than the one being changed stay at their defaults.</p>
+<details class="info">
+<summary>Manga Toon Ground settings</summary>
+<table>
+<thead>
+<tr>
+<th>Panel</th>
+<th>Setting</th>
+<th>English Name</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ground</td>
+<td><a href="#mtg-shadow-only">Shadow Only</a></td>
+<td><code>Shadow Only</code></td>
+<td>Off</td>
+<td>Hides the ground and leaves only the shadow over the background</td>
+</tr>
+<tr>
+<td>Ground</td>
+<td>Ground Color</td>
+<td><code>Ground Color</code></td>
+<td>White</td>
+<td>The ground color (a screentone material can also be plugged in)</td>
+</tr>
+<tr>
+<td>Texture</td>
+<td>Ground Texture</td>
+<td><code>Ground Texture</code></td>
+<td>(automatic)</td>
+<td>Filled in automatically from the image you choose</td>
+</tr>
+<tr>
+<td>Texture</td>
+<td><a href="#mtg-texture-strength">Texture Strength</a></td>
+<td><code>Texture Strength</code></td>
+<td>1</td>
+<td>How strongly the texture shows on the ground</td>
+</tr>
+<tr>
+<td>Texture</td>
+<td>Grayscale Texture</td>
+<td><code>Grayscale Texture</code></td>
+<td>Off</td>
+<td>Uses the texture in black and white</td>
+</tr>
+<tr>
+<td>Texture</td>
+<td>Ground Normal</td>
+<td><code>Ground Normal</code></td>
+<td>(automatic)</td>
+<td>Filled in automatically from the texture and normal map</td>
+</tr>
+<tr>
+<td>Texture</td>
+<td>Bump Shade Color</td>
+<td><code>Bump Shade Color</code></td>
+<td>Gray 0.45</td>
+<td>The color multiplied on the sides of bumps facing away from the light (also shows inside shadows)</td>
+</tr>
+<tr>
+<td>Texture</td>
+<td><a href="#mtg-bump-shade-threshold">Bump Shade Threshold</a></td>
+<td><code>Bump Shade Threshold</code></td>
+<td>0.75</td>
+<td>The higher it is, the more even gentle bumps get shaded</td>
+</tr>
+<tr>
+<td>Texture</td>
+<td>Bump Shade Softness</td>
+<td><code>Bump Shade Softness</code></td>
+<td>0.3</td>
+<td>0 = two steps like cel shading, 1 = smooth</td>
+</tr>
+<tr>
+<td>Texture</td>
+<td>Bump Highlights</td>
+<td><code>Bump Highlights</code></td>
+<td>On</td>
+<td>Brightens the sides of bumps facing the light (not shown inside that light's shadow)</td>
+</tr>
+<tr>
+<td>Texture</td>
+<td>Bump Highlight Color</td>
+<td><code>Bump Highlight Color</code></td>
+<td>White</td>
+<td>The color of the bump highlights</td>
+</tr>
+<tr>
+<td>Texture</td>
+<td><a href="#mtg-bump-highlight-strength">Bump Highlight Strength</a></td>
+<td><code>Bump Highlight Strength</code></td>
+<td>0.6</td>
+<td>How strongly the highlights show</td>
+</tr>
+<tr>
+<td>Texture</td>
+<td>Bump Highlight Threshold</td>
+<td><code>Bump Highlight Threshold</code></td>
+<td>0.3</td>
+<td>The lower it is, the more highlights appear</td>
+</tr>
+<tr>
+<td>Shadow</td>
+<td><a href="#mtg-key-light-shadows">Key Light Shadows</a></td>
+<td><code>Key Light Shadows</code></td>
+<td>On</td>
+<td>Draws the key light's shadow</td>
+</tr>
+<tr>
+<td>Shadow</td>
+<td>Fill Light Shadows</td>
+<td><code>Fill Light Shadows</code></td>
+<td>Off</td>
+<td>Draws the fill light's shadow</td>
+</tr>
+<tr>
+<td>Shadow</td>
+<td>Back Light Shadows</td>
+<td><code>Back Light Shadows</code></td>
+<td>Off</td>
+<td>Draws the back light's shadow</td>
+</tr>
+<tr>
+<td>Shadow</td>
+<td>Ground Shadow Color</td>
+<td><code>Ground Shadow Color</code></td>
+<td>Gray 0.25</td>
+<td>The shadow color (a screentone material can also be plugged in)</td>
+</tr>
+<tr>
+<td>Shadow</td>
+<td><a href="#mtg-ground-shadow-opacity">Ground Shadow Opacity</a></td>
+<td><code>Ground Shadow Opacity</code></td>
+<td>1</td>
+<td>How strongly the shadow shows (0 = no shadow)</td>
+</tr>
+<tr>
+<td>Shadow</td>
+<td><a href="#mtg-shadow-blur">Shadow Blur</a></td>
+<td><code>Shadow Blur</code></td>
+<td>0</td>
+<td>How blurry the ground shadow is. The character's shadows do not change</td>
+</tr>
+<tr>
+<td>Shadow</td>
+<td>Shadow Softness</td>
+<td><code>Shadow Softness</code></td>
+<td>0.1</td>
+<td>How soft the shadow's edge is (0 = crisp)</td>
+</tr>
+<tr>
+<td>Ambient Occlusion</td>
+<td>Ground AO</td>
+<td><code>Ground AO</code></td>
+<td>Off</td>
+<td>Darkens the ground near objects and where they touch it. Shadows there get darker too</td>
+</tr>
+<tr>
+<td>Ambient Occlusion</td>
+<td>Ground AO Color</td>
+<td><code>Ground AO Color</code></td>
+<td>Gray 0.3</td>
+<td>The color multiplied where light is blocked (screentone can be used too)</td>
+</tr>
+<tr>
+<td>Ambient Occlusion</td>
+<td><a href="#mtg-ground-ao-strength">Ground AO Strength</a></td>
+<td><code>Ground AO Strength</code></td>
+<td>0.8</td>
+<td>How much AO darkens the ground</td>
+</tr>
+<tr>
+<td>Ambient Occlusion</td>
+<td><a href="#mtg-ground-ao-distance">Ground AO Distance</a></td>
+<td><code>Ground AO Distance</code></td>
+<td>1 m</td>
+<td>How far from objects the darkening reaches</td>
+</tr>
+<tr>
+<td>Ambient Occlusion</td>
+<td><a href="#mtg-ground-ao-contrast">Ground AO Contrast</a></td>
+<td><code>Ground AO Contrast</code></td>
+<td>0</td>
+<td>0 = smooth blur, 1 = crisp like a manga contact shadow</td>
+</tr>
+<tr>
+<td>Ambient Occlusion</td>
+<td>Ground AO Tone Contrast</td>
+<td><code>Ground AO Tone Contrast</code></td>
+<td>0</td>
+<td>+ = stronger difference between dark and light areas, − = flatter</td>
+</tr>
+<tr>
+<td>Ambient Occlusion</td>
+<td>Ground AO Brightness</td>
+<td><code>Ground AO Brightness</code></td>
+<td>0</td>
+<td>+ = lighter, − = darker</td>
+</tr>
+<tr>
+<td>Ambient Occlusion</td>
+<td>AO Only in Shadows</td>
+<td><code>AO Only in Shadows</code></td>
+<td>Off</td>
+<td>Shows AO only inside the shadow lights' shadows (clipping mask)</td>
+</tr>
+<tr>
+<td>Fade</td>
+<td>Fade Edges</td>
+<td><code>Fade Edges</code></td>
+<td>Off</td>
+<td>Fades out the ground far from its center so it blends into the background</td>
+</tr>
+<tr>
+<td>Fade</td>
+<td>Fade Ramp</td>
+<td><code>Fade Ramp</code></td>
+<td>1</td>
+<td>Filled in automatically from the fade Color Ramp</td>
+</tr>
+<tr>
+<td>Fade</td>
+<td>Fade Shape</td>
+<td><code>Fade Shape</code></td>
+<td>1</td>
+<td>0 = circular from the center, 1 = along the ground's edges (MTG Fade Position)</td>
+</tr>
+<tr>
+<td>Fade</td>
+<td><a href="#mtg-fade-radius">Fade Radius</a></td>
+<td><code>Fade Radius</code></td>
+<td>30 m</td>
+<td>The radius of the circle where the ground fades out (MTG Fade Position)</td>
+</tr>
+<tr>
+<td>Fade</td>
+<td>Edge Fade Width</td>
+<td><code>Edge Fade Width</code></td>
+<td>5 m</td>
+<td>How wide the fade is, measured from the ground's edges (MTG Fade Position)</td>
+</tr>
+<tr>
+<td>Lights (automatic)</td>
+<td>Key / Fill / Back light direction and strength</td>
+<td><code>… Light Direction / Strength</code></td>
+<td>(automatic)</td>
+<td>Filled in automatically by drivers from the ground shadow lights. Strength 0 = no shadow from that light</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h3 id="ground">Ground</h3>
+<div class="ms-prop" id="mtg-shadow-only" style="max-width:520px"><div class="ph"><strong>Shadow Only</strong><code>Shadow Only</code><span class="chips"><span class="chip p">Default Off</span><span class="chip">Compared Off → On</span></span></div><p class="desc">Hides the ground and leaves only the shadow over the background. When on, the ground (texture) disappears and only the shadow is multiplied over the background. In the comparison the background is set to "Screentone": with it on, the ground disappears and only the shadow stays on the dot background.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mtg_shonly.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mtg_shonly.webp" alt="Shadow Only compared Off and On"></a><div class="ms-vals" style="--n:2"><span class="def">Off</span><span>On</span></div></div>
+
+<h3 id="texture">Texture</h3>
+<div class="ms-prop" id="mtg-texture-strength"><div class="ph"><strong>Texture Strength</strong><code>Texture Strength</code><span class="chips"><span class="chip p">Default 1</span><span class="chip">Compared 0 → 1</span></span></div><p class="desc">How strongly the texture shows on the ground. Images use the sample concrete tile (no normal map).</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mtg_tex.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mtg_tex.webp" alt="Texture Strength compared at 0, 0.25, 0.5, 0.75 and 1"></a><div class="ms-vals" style="--n:5"><span>0</span><span>0.25</span><span>0.5</span><span>0.75</span><span class="def">1</span></div></div>
+
+<div class="ms-prop" id="mtg-bump-shade-threshold"><div class="ph"><strong>Bump Shade Threshold</strong><code>Bump Shade Threshold</code><span class="chips"><span class="chip p">Default 0.75</span><span class="chip">Compared 0 → 1</span></span></div><p class="desc">The higher it is, the more even gentle bumps get shaded. Images use a normal map with highlights off.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mtg_bumpth.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mtg_bumpth.webp" alt="Bump Shade Threshold compared at 0, 0.25, 0.5, 0.75 and 1"></a><div class="ms-vals" style="--n:5"><span>0</span><span>0.25</span><span>0.5</span><span class="def">0.75</span><span>1</span></div></div>
+
+<div class="ms-prop" id="mtg-bump-highlight-strength"><div class="ph"><strong>Bump Highlight Strength</strong><code>Bump Highlight Strength</code><span class="chips"><span class="chip p">Default 0.6</span><span class="chip">Compared 0 → 1</span></span></div><p class="desc">How strongly the highlights show. Images use a normal map.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mtg_bumphi.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mtg_bumphi.webp" alt="Bump Highlight Strength compared at 0, 0.3, 0.6, 0.8 and 1"></a><div class="ms-vals" style="--n:5"><span>0</span><span>0.3</span><span class="def">0.6</span><span>0.8</span><span>1</span></div></div>
+
+<h3 id="shadow">Shadow</h3>
+<div class="ms-prop" id="mtg-key-light-shadows"><div class="ph"><strong>Shadows from</strong><code>Key / Fill / Back Light Shadows</code><span class="chips"><span class="chip p">Default Key only</span><span class="chip">Compared Key → all 3</span></span></div><p class="desc">Turns the shadow of each of the key, fill and back lights on or off. Where shadows overlap, they get darker.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mtg_lights.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mtg_lights.webp" alt="Shadow-casting lights compared: key, fill, back, key + fill, and all 3"></a><div class="ms-vals" style="--n:5"><span class="def">Key</span><span>Fill</span><span>Back</span><span>Key + Fill</span><span>All 3</span></div></div>
+
+<div class="ms-prop" id="mtg-ground-shadow-opacity"><div class="ph"><strong>Ground Shadow Opacity</strong><code>Ground Shadow Opacity</code><span class="chips"><span class="chip p">Default 1</span><span class="chip">Compared 0 → 1</span></span></div><p class="desc">How strongly the shadow shows (0 = no shadow).</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mtg_opacity.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mtg_opacity.webp" alt="Ground Shadow Opacity compared at 0, 0.25, 0.5, 0.75 and 1"></a><div class="ms-vals" style="--n:5"><span>0</span><span>0.25</span><span>0.5</span><span>0.75</span><span class="def">1</span></div></div>
+
+<div class="ms-prop" id="mtg-shadow-blur"><div class="ph"><strong>Shadow Blur</strong><code>Shadow Blur</code><span class="chips"><span class="chip p">Default 0</span><span class="chip">Compared 0 → 1</span></span></div><p class="desc">How blurry the ground shadow is. The character's shadows do not change. Shadow Blur 1 = a shadow light angle of 20°.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mtg_blur.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mtg_blur.webp" alt="Shadow Blur compared at 0, 0.25, 0.5, 0.75 and 1"></a><div class="ms-vals" style="--n:5"><span class="def">0</span><span>0.25</span><span>0.5</span><span>0.75</span><span>1</span></div></div>
+
+<h3 id="ambient-occlusion">Ambient Occlusion</h3>
+<div class="ms-prop" id="mtg-ground-ao-strength"><div class="ph"><strong>Ground AO Strength</strong><code>Ground AO Strength</code><span class="chips"><span class="chip p">Default 0.8</span><span class="chip">Compared 0 → 1</span></span></div><p class="desc">How much AO darkens the ground. Images use AO on with Ground AO Distance 2.5 m.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mtg_aostr.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mtg_aostr.webp" alt="Ground AO Strength compared at 0, 0.25, 0.5, 0.8 and 1"></a><div class="ms-vals" style="--n:5"><span>0</span><span>0.25</span><span>0.5</span><span class="def">0.8</span><span>1</span></div></div>
+
+<div class="ms-prop" id="mtg-ground-ao-distance"><div class="ph"><strong>Ground AO Distance</strong><code>Ground AO Distance</code><span class="chips"><span class="chip p">Default 1 m</span><span class="chip">Compared 0.25 → 4</span></span></div><p class="desc">How far from objects the darkening reaches. Images use AO on.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mtg_aodist.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mtg_aodist.webp" alt="Ground AO Distance compared at 0.25, 0.5, 1, 2 and 4"></a><div class="ms-vals" style="--n:5"><span>0.25</span><span>0.5</span><span class="def">1</span><span>2</span><span>4</span></div></div>
+
+<div class="ms-prop" id="mtg-ground-ao-contrast"><div class="ph"><strong>Ground AO Contrast</strong><code>Ground AO Contrast</code><span class="chips"><span class="chip p">Default 0</span><span class="chip">Compared 0 → 1</span></span></div><p class="desc">0 = smooth blur, 1 = crisp like a manga contact shadow. Images use AO on with Ground AO Distance 2.5 m.</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mtg_aocon.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mtg_aocon.webp" alt="Ground AO Contrast compared at 0, 0.25, 0.5, 0.75 and 1"></a><div class="ms-vals" style="--n:5"><span class="def">0</span><span>0.25</span><span>0.5</span><span>0.75</span><span>1</span></div></div>
+
+<h3 id="fade">Fade</h3>
+<div class="ms-prop" id="mtg-fade-radius"><div class="ph"><strong>Fade Radius</strong><code>Fade Radius</code><span class="chips"><span class="chip p">Default 30 m</span><span class="chip">Compared 3 m → 30 m</span></span></div><p class="desc">The radius of the circle where the ground fades out (MTG Fade Position). Images use Fade Edges on with Fade Shape 0 (circular).</p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/img/spec/mtg_fade.webp" data-desc-position="bottom"><img loading="lazy" src="../../assets/img/spec/mtg_fade.webp" alt="Fade Radius compared at 3 m, 5 m, 8 m, 12 m and 30 m"></a><div class="ms-vals" style="--n:5"><span>3 m</span><span>5 m</span><span>8 m</span><span>12 m</span><span class="def">30 m</span></div></div>
+
+<div class="admonition note">
+<p>Shadow Softness barely changes anything while the shadow lights' shadows are crisp. Combined with Shadow Blur, it changes how the light and dark of a blurred shadow come out.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="mtb.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Manga Toon Backgrounds">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Manga Toon Backgrounds
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="mtfx.html" class="md-footer__link md-footer__link--next" aria-label="Next: Manga Toon Effects">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Manga Toon Effects
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Adacchi-MultiCreator
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://x.com/3d_manga19094" target="_blank" rel="noopener" title="3D Manga Studios (X)" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M357.2 48h70.6L273.6 224.2 455 464H313L201.7 318.6 74.5 464H3.8l164.9-188.5L-5.2 48h145.6l100.5 132.9zm-24.8 373.8h39.1L119.1 88h-42z"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/Adacchi-MultiCreator/3D-Manga-Studios-Issues" target="_blank" rel="noopener" title="Report a bug (GitHub Issues)" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "navigation.instant", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/dfdemo.js?v=cac9751f"></script>
+      
+        <script src="../../javascripts/extra.js?v=dd946d54"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
