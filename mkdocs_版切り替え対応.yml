@@ -1,0 +1,192 @@
+site_name: 3D Manga Studios
+site_description: Blenderで漫画のコマを仕上げるアドオン「3D Manga Studios」のドキュメント
+site_author: Adacchi-MultiCreator
+site_url: https://nekonote-kobo.github.io/3d-manga-studios/
+use_directory_urls: false
+copyright: "&copy; 2026 Adacchi-MultiCreator"
+
+theme:
+  name: material
+  language: ja
+  logo: "assets/img/logo ink.png"
+  favicon: assets/img/icon.png
+  font:
+    text: Noto Sans JP
+    code: Inconsolata
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: ダークモードに切り替え
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: ライトモードに切り替え
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - navigation.instant
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+
+plugins:
+  - search:
+      lang:
+        - ja
+        - en
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: ja
+          default: true
+          name: 日本語
+          build: true
+        - locale: en
+          name: English
+          build: true
+          site_description: Documentation for 3D Manga Studios, a Blender add-on for finishing manga panels
+          theme:
+            palette:
+              - media: "(prefers-color-scheme: light)"
+                scheme: default
+                primary: custom
+                accent: custom
+                toggle:
+                  icon: material/brightness-7
+                  name: Switch to dark mode
+              - media: "(prefers-color-scheme: dark)"
+                scheme: slate
+                primary: custom
+                accent: custom
+                toggle:
+                  icon: material/brightness-4
+                  name: Switch to light mode
+          nav_translations:
+            トップ: Home
+            特長: Highlights
+            はじめに: Getting Started
+            インストール: Installation
+            ライセンス認証: License Activation
+            機能ガイド: Feature Guide
+            シーン: Scene
+            マテリアル: Materials
+            輪郭線: Outlines
+            背景・エフェクト: Backgrounds & Effects
+            マテリアル仕様: Material Reference
+            作画: Drawing
+            背景・舞台: Backgrounds & Stage
+            演出: Effects
+            資料: Resources
+            翻訳辞書: Translation Dictionary
+            サポート: Support
+            よくある質問: FAQ
+            更新履歴: Changelog
+            利用規約・ライセンス: Terms & License
+          extra:
+            generator: false
+            version:
+              provider: mike
+              default: latest
+            social:
+              - icon: fontawesome/brands/x-twitter
+                link: https://x.com/3d_manga19094
+                name: 3D Manga Studios (X)
+              - icon: fontawesome/brands/github
+                link: https://github.com/Adacchi-MultiCreator/3D-Manga-Studios-Issues
+                name: Report a bug (GitHub Issues)
+  - glightbox:
+      skip_classes:
+        - ms-noz
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - def_list
+  - footnotes
+  - toc:
+      permalink: false
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.critic
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+hooks:
+  - hooks/cache_bust.py
+
+extra_css:
+  - https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/dfdemo.js
+  - javascripts/extra.js
+
+extra:
+  generator: false
+  version:
+    provider: mike
+    default: latest
+  social:
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/3d_manga19094
+      name: 3D Manga Studios（X）
+    - icon: fontawesome/brands/github
+      link: https://github.com/Adacchi-MultiCreator/3D-Manga-Studios-Issues
+      name: 不具合の報告（GitHub Issues）
+
+nav:
+  - トップ: index.md
+  - 特長: highlights.md
+  - はじめに:
+      - getting-started/index.md
+      - インストール: getting-started/install.md
+      - ライセンス認証: getting-started/license.md
+  - 機能ガイド:
+      - guide/index.md
+      - シーン: guide/scene.md
+      - マテリアル: guide/material.md
+      - 輪郭線: guide/outline.md
+      - 背景・エフェクト: guide/bgfx.md
+  - マテリアル仕様:
+      - spec/index.md
+      - 作画:
+          - Manga Tone Shader: spec/mts.md
+          - Manga Tone Flat: spec/flat.md
+          - Manga Tone Shaded: spec/shaded.md
+          - Manga Toon Eye: spec/mte.md
+          - Manga Toon Mouth: spec/mtm.md
+      - 背景・舞台:
+          - Manga Toon Backgrounds: spec/mtb.md
+          - Manga Toon Ground: spec/mtg.md
+      - 演出:
+          - Manga Toon Effects: spec/mtfx.md
+          - Manga Toon Speech Bubbles: spec/mtsb.md
+  - 資料:
+      - 翻訳辞書: translation.md
+  - サポート:
+      - よくある質問: faq.md
+      - 更新履歴: changelog.md
+      - 利用規約・ライセンス: license.md
