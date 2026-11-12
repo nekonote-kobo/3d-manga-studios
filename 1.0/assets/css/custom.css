@@ -1,0 +1,49 @@
+/* h1スタイル */
+.md-typeset h1 {
+    padding: 0.3em 1em;
+    display: inline-block;
+    border-left: 15px solid var(--md-primary-fg-color); /* プライマリカラーを使用 */
+    border-bottom: 5px solid var(--md-primary-fg-color); /* プライマリカラーを使用 */
+    color: var(--md-default-fg-color); /* ライトモードではデフォルトの文字色 */
+    background-color: color-mix(in srgb, var(--md-primary-fg-color) 10%, transparent); /* 薄いプライマリカラーを背景に */
+}
+
+.md-typeset h2{
+    padding: 0.3em;
+    display: inline-block;
+    border-bottom: 2px solid var(--md-primary-fg-color); /* プライマリカラーを使用 */
+    color: var(--md-default-fg-color); /* ライトモードではデフォルトの文字色 */
+}
+
+.md-typeset h3{
+    padding: 0.3em;
+    border-bottom: 1px solid var(--md-primary-fg-color); /* プライマリカラーを使用 */
+    color: var(--md-default-fg-color); /* ライトモードではデフォルトの文字色 */
+}
+
+/* ダークモード時のh2スタイル */
+[data-md-color-scheme="slate"] .md-typeset h2 {
+    border-bottom-color: var(--md-accent-fg-color); /* ダークモードではアクセントカラー */
+}
+
+/* ダークモード時のh2スタイル */
+[data-md-color-scheme="slate"] .md-typeset h3 {
+    border-bottom-color: var(--md-accent-fg-color); /* ダークモードではアクセントカラー */
+}
+
+.new-label {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 0px 20px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #fff;
+    background: linear-gradient(90deg, #ff6b6b, #f8a100);
+    border-radius: 999px;
+    box-shadow: -3px 5px 0 rgba(32, 148, 243);
+    vertical-align: middle;
+}
+
+[data-md-color-scheme="slate"] .new-label {
+    box-shadow: -3px 5px 0 rgb(126 86 194);
+}
